@@ -20,7 +20,7 @@ This tool leverages large language models (LLMs) to translate SRT (SubRip Subtit
 1.  **Clone the repository:**
 
     ```bash
-    git clone <repository_url>
+    git clone https://github.com/alimoameri/ai-srt-translator.git
     cd ai-srt-translator
     ```
 
@@ -54,10 +54,10 @@ options:
   * `-h`, `--help`            show this help message and exit
 
   * `-s`, `--source`
-                        Source language (e.g., English)
+                        Source language (Default is English)
 
   * `-t`, `--target`
-                        Target language (e.g., Persian)
+                        Target language (Default is Persian)
 
   * `-f`, `--file` Input SRT file path
 
@@ -65,7 +65,7 @@ options:
                         Model name (One of Gemini or OpenAI models accesible via API)
 
   * `-b`, `--batch-size`
-                        Batch size (Number of subtitle entries sent to the LLM each time)
+                        Batch size (Number of subtitle entries sent to the LLM each time; Default is 200)
 
 **Example:**
 
