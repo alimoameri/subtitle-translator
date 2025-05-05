@@ -32,7 +32,7 @@ This tool leverages large language models (LLMs) to translate SRT (SubRip Subtit
 
 3.  **Set up your API key:**
 
-    *   **Recommended:** Create a `.env` file in the project directory and add your API key(s):
+    *   Create a `.env` file in the project directory and add your API key(s):
 
         ```
         GOOGLE_API_KEY=YOUR_GOOGLE_API_KEY
@@ -40,7 +40,10 @@ This tool leverages large language models (LLMs) to translate SRT (SubRip Subtit
         OPENAPI_BASE_URL=YOUR_OPENAPI_BASE_URL
         ```
 
-    *   Alternatively, you can set these environment variabless directly in your shell.
+    *   Alternatively, you can set these environment variabless directly in your shell:
+        ```bash
+        export OPENAI_API_KEY=YOUR_API_KEY
+        ```
 
 ## Usage
 
