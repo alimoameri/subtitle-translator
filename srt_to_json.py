@@ -15,7 +15,7 @@ def parse_srt(srt_content):
 
     subtitles = []
     for match in matches:
-        # Adjust indices if needed based on your capture groups (should be 0, 1, 2)
+        # Indices are based on capture groups
         try:
             index = int(match[0])
             timecode = match[1].strip()

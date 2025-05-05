@@ -36,8 +36,8 @@ def main():
     parser.add_argument("-s", "--source", default=DEFAULT_SOURCE_LANG, help="Source language (e.g., English)")
     parser.add_argument("-t", "--target", default=DEFAULT_TARGET_LANG, help="Target language (e.g., Persian)")
     parser.add_argument("-f", "--file", help="Input SRT file path")
-    parser.add_argument("-m", "--model-name", help="Model name (One of Gemini or OpenAI models accesible via API)")
-    parser.add_argument("-s", "--batch-size", default=DEFAULT_BATCH_SIZE, help="Batch size (Number of subtitle entries sent to the LLM each time)")
+    parser.add_argument("-m", "--model-name", help="Model name (One of Gemini or OpenAI models accessible via API)")
+    parser.add_argument("-b", "--batch-size", default=DEFAULT_BATCH_SIZE, help="Batch size (Number of subtitle entries sent to the LLM each time)")
 
     args = parser.parse_args()
 
