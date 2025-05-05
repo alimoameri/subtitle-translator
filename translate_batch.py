@@ -18,6 +18,8 @@ def get_client(model_name: str):
         OPENAPI_BASE_URL = os.getenv("OPENAPI_BASE_URL")
         if not API_KEY:
             raise ValueError("OpenAI API key not found. Set OPENAI_API_KEY environment variable or in a .env file.")
+        if not OPENAPI_BASE_URL:
+            raise ValueError("OpenAI Base Url not found. Set OPENAPI_BASE_URL environment variable or in a .env file.")
         
         client = OpenAI(
            base_url=OPENAPI_BASE_URL,
@@ -30,6 +32,8 @@ def get_client(model_name: str):
             raise ValueError("Google API key not found. Set GOOGLE_API_KEY environment variable or in a .env file.")
         
         client = genai.Client(api_key=API_KEY)
+    else:
+        raise Exception("Invalid model name.")
         
     return client
 
@@ -54,6 +58,8 @@ def get_response(client, model_name, prompt):
     
 def translate_batch(texts:list, source_lang: str, target_lang: str, model_name: str, batch_size: int=200):
     """Translates a batch of texts using the LLM (OpenAI or Google API)."""
+    if model_name == None:
+        raise Exception("Specify model name with -m parameter.")
     if not texts:
         return []
 

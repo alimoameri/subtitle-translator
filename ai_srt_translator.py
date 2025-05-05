@@ -46,6 +46,7 @@ def main():
         print(f"Input file: {args.file}")
         output_file = args.file.replace(".txt", ".srt") if args.file.endswith(".txt") else args.file + f"_{args.target}.srt"
         print(f"Output file: {output_file}")
+        print(f"Model name: {args.model_name}")
     except AttributeError:
         print(f"You should specify a srt file path with -f argument.")
         exit(1)
