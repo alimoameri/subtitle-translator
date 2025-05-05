@@ -1,3 +1,7 @@
+## Configuration
+
+These files were translated using the following configuration.
+
 ### The.Amazing.World.of.Gumball.S02E01.The.Remote
 + **batch_size** = 200
 + **model**= gpt-4o-mini
