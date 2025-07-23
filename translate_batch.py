@@ -1,4 +1,5 @@
 import os
+import time
 from tqdm import tqdm
 from google import genai
 from openai import OpenAI
@@ -77,6 +78,9 @@ def translate_batch(texts:list, source_lang: str, target_lang: str, model_name: 
     client = get_client(model_name)
     translated_texts = []
     
+    i = 0
+    GEMINI_RPM_LIMIT = 15
+    WATE_TIME_SECONDS = 60
     for batch in tqdm(batches):
         prompt = translation_prompt_template.invoke(
             {"source_lang": source_lang,
@@ -84,5 +88,9 @@ def translate_batch(texts:list, source_lang: str, target_lang: str, model_name: 
              "TEXT_SEPARATOR": TEXT_SEPARATOR}).text + batch
         translated_combined = get_response(client, model_name, prompt)
         translated_texts.append(translated_combined.split(TEXT_SEPARATOR))
+        i += 1
+        if i % GEMINI_RPM_LIMIT == 0:
+            print("Waiting 60 seconds for rate limits...")
+            time.sleep(WATE_TIME_SECONDS)
 
     return translated_texts
