@@ -75,7 +75,7 @@ options:
 To translate `Spider-man-TAS-S01E01-Night-of-the-Lizard-English.srt` from English to Persian:
 
 ```bash
-python3 srt_translator.py -s English -t Persian -f Spider-man-TAS-S01E01-Night-of-the-Lizard-English.srt
+python3 ai_srt_translator.py -s English -t Persian -f Spider-man-TAS-S01E01-Night-of-the-Lizard-English.srt
 ```
 
 The translated SRT file will be saved as `Spider-man-TAS-S01E01-Night-of-the-Lizard-English.srt_Persian.srt`.
