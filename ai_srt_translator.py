@@ -1,16 +1,30 @@
+import chardet
 import argparse 
 from srt_to_json import parse_srt
 from translate_batch import translate_batch
 
 DEFAULT_SOURCE_LANG="English"
 DEFAULT_TARGET_LANG="Persian"
+DEFAULT_MODEL_NAME = "gemini-2.0-flash"
 DEFAULT_BATCH_SIZE=200
 
 def read_srt_file(path):
     try:
-        with open(path, 'r', encoding='utf-8') as f:
-            srt_content = f.read()
-            return srt_content
+        with open(path, 'rb') as f:  # Open in binary mode
+            raw_data = f.read()
+
+        # Detect the encoding
+        result = chardet.detect(raw_data)
+        encoding = result['encoding']
+
+        if encoding is None:
+            print("Error: Could not detect encoding.  Trying utf-8 as a fallback.")
+            encoding = 'utf-8'  # Fallback to UTF-8 if detection fails
+
+        # Decode the data using the detected encoding
+        srt_content = raw_data.decode(encoding)
+        return srt_content
+
     except FileNotFoundError:
         print(f"Error: Input file not found at {path}")
         exit(1)
@@ -18,6 +32,15 @@ def read_srt_file(path):
         print(f"Error reading input file: {e}")
         exit(1)
 
+def write_srt_file(path, content):
+    try:
+        with open(path, 'w', encoding='utf-8') as f:
+            f.write(content)
+        print(f"Successfully saved to {path}")
+    except Exception as e:
+        print(f"Error writing output file: {e}")
+        exit(1)
+        
 def reconstruct_srt(subtitles, translated_texts):
     """Reconstructs the SRT file content from original data and translated text."""
     srt_output = []
@@ -36,8 +59,8 @@ def main():
     parser.add_argument("-s", "--source", default=DEFAULT_SOURCE_LANG, help="Source language (e.g., English)")
     parser.add_argument("-t", "--target", default=DEFAULT_TARGET_LANG, help="Target language (e.g., Persian)")
     parser.add_argument("-f", "--file", help="Input SRT file path")
-    parser.add_argument("-m", "--model-name", help="Model name (One of Gemini or OpenAI models accessible via API)")
-    parser.add_argument("-b", "--batch-size", default=DEFAULT_BATCH_SIZE, help="Batch size (Number of subtitle entries sent to the LLM each time)")
+    parser.add_argument("-m", "--model-name", default=DEFAULT_MODEL_NAME, help="Model name (One of Gemini or OpenAI models accessible via API)")
+    parser.add_argument("-b", "--batch-size", default=DEFAULT_BATCH_SIZE, help="Batch size (Number of subtitle entries sent to the LLM each time)", type=int)
 
     args = parser.parse_args()
 
@@ -58,7 +81,7 @@ def main():
     # 2. Parse the SRT content
     print(f"Parsing {args.file} file...")
     original_subtitles = parse_srt(srt_content)
-
+    
     if not original_subtitles:
         print("Error: No subtitles found or failed to parse the SRT file.")
         exit(1)
@@ -87,13 +110,7 @@ def main():
         exit(1)
 
     # 6. Write the output SRT file
-    try:
-        with open(output_file, 'w', encoding='utf-8') as f:
-            f.write(final_srt_content)
-        print(f"Successfully translated and saved to {output_file}")
-    except Exception as e:
-        print(f"Error writing output file: {e}")
-        exit(1)
+    write_srt_file(output_file, final_srt_content)
 
 if __name__ == "__main__":
     main()

@@ -65,7 +65,7 @@ options:
   * `-f`, `--file` Input SRT file path
 
   * `-m`, `--model-name`
-                        Model name (One of Gemini or OpenAI models accesible via API)
+                        Model name (One of Gemini or OpenAI models accesible via API, Default is gemini-2.0-flash)
 
   * `-b`, `--batch-size`
                         Batch size (Number of subtitle entries sent to the LLM each time; Default is 200)
