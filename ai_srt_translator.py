@@ -72,7 +72,7 @@ def main(args):
         
     logging.info("Parsed %i subtitle entries.", len(original_subtitles))
 
-    # 3. Translate the texts in batches
+    # 2. Translate the texts in batches
     try:
         translated_subtitles = batch_translate(original_subtitles, args.batch_size, args.source, args.target, args.model_name)
     except Exception as e:
@@ -81,7 +81,7 @@ def main(args):
     
     translated_srt = srt.compose(translated_subtitles)
 
-    # 4. Write the output SRT file
+    # 3. Write the output SRT file
     write_srt_file(output_file, translated_srt)
 
 if __name__ == "__main__":

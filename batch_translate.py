@@ -27,7 +27,7 @@ def build_batch_prompt(subs, source_lang, target_lang):
     prompt += "- Do NOT merge or split lines.\n"
     prompt += f"- Return {target_lang} lines in the same order and count.\n\n"
     
-    prompt += "English subtitles:\n"
+    prompt += f"{source_lang} subtitles:\n"
     for idx, sub in enumerate(subs, 1):
         prompt += f"{idx}. {sub.content.replace("\n",' ').strip()}\n"
     
