@@ -1,12 +1,19 @@
+import srt
 import chardet
 import argparse 
-from srt_to_json import parse_srt
+import logging
 from translate_batch import translate_batch
 
 DEFAULT_SOURCE_LANG="English"
 DEFAULT_TARGET_LANG="Persian"
 DEFAULT_MODEL_NAME = "gemini-2.0-flash"
 DEFAULT_BATCH_SIZE=200
+
+# configure logging
+logging.basicConfig(
+    level=logging.INFO, 
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
 
 def read_srt_file(path):
     try:
@@ -40,7 +47,27 @@ def write_srt_file(path, content):
     except Exception as e:
         print(f"Error writing output file: {e}")
         exit(1)
+
+def parse_srt_file(file_path):
+    # Read the input SRT file
+    srt_content = read_srt_file(args.file)
+
+    # Parse the SRT content
+    logging.info("Parsing %s file...", args.file)
+    
+    try:
+        original_subtitles = list(srt.parse(srt_content))
+    except srt.SRTParseError:
+        logging.exception("Error: Failed to parse the SRT file.")
+        exit(1)
         
+    return original_subtitles
+
+
+def extract_texts_from_srt(subtitles: list) -> list:
+    texts =  [sub.content for sub in subtitles]
+    return texts
+
 def reconstruct_srt(subtitles, translated_texts):
     """Reconstructs the SRT file content from original data and translated text."""
     srt_output = []
@@ -54,41 +81,28 @@ def reconstruct_srt(subtitles, translated_texts):
 
     return "\n".join(srt_output)
 
-def main():
-    parser = argparse.ArgumentParser(description="Translate SRT files using OpenAI or Google LLMs.")
-    parser.add_argument("-s", "--source", default=DEFAULT_SOURCE_LANG, help="Source language (e.g., English)")
-    parser.add_argument("-t", "--target", default=DEFAULT_TARGET_LANG, help="Target language (e.g., Persian)")
-    parser.add_argument("-f", "--file", help="Input SRT file path")
-    parser.add_argument("-m", "--model-name", default=DEFAULT_MODEL_NAME, help="Model name (One of Gemini or OpenAI models accessible via API)")
-    parser.add_argument("-b", "--batch-size", default=DEFAULT_BATCH_SIZE, help="Batch size (Number of subtitle entries sent to the LLM each time)", type=int)
-
-    args = parser.parse_args()
-
+def main(args):
     print(f"Starting SRT translation from {args.source} to {args.target}")
+    
     try:
-        print(f"Input file: {args.file}")
+        logging.info("Input file: %s", args.file)
         output_file = args.file.replace(".txt", ".srt") if args.file.endswith(".txt") else args.file + f"_{args.target}.srt"
-        print(f"Output file: {output_file}")
-        print(f"Model name: {args.model_name}")
+        logging.info("Output file: %s", output_file)
+        logging.info("Model name: %s", args.model_name)
     except AttributeError:
-        print(f"You should specify a srt file path with -f argument.")
+        logging.exception("You should specify a srt file path with -f argument.")
         exit(1)
+    
+    # 1. Parse SRT file
+    original_subtitles = parse_srt_file(args.file)
+    if not original_subtitles:
+        logging.error("Error: No subtitles found.")
+        
+    logging.info("Parsed %i subtitle entries.", len(original_subtitles))
         
 
-    # 1. Read the input SRT file
-    srt_content = read_srt_file(args.file)
-
-    # 2. Parse the SRT content
-    print(f"Parsing {args.file} file...")
-    original_subtitles = parse_srt(srt_content)
-    
-    if not original_subtitles:
-        print("Error: No subtitles found or failed to parse the SRT file.")
-        exit(1)
-    print(f"Parsed {len(original_subtitles)} subtitle entries.")
-
     # 3. Extract texts for translation
-    texts_to_translate = [sub['text'] for sub in original_subtitles]
+    texts_to_translate = extract_texts_from_srt(original_subtitles)
 
     # 4. Translate the texts in batches
     try:
@@ -113,4 +127,14 @@ def main():
     write_srt_file(output_file, final_srt_content)
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description="Translate SRT files using OpenAI or Google LLMs.")
+    parser.add_argument("-s", "--source", default=DEFAULT_SOURCE_LANG, help="Source language (e.g., English)")
+    parser.add_argument("-t", "--target", default=DEFAULT_TARGET_LANG, help="Target language (e.g., Persian)")
+    parser.add_argument("-f", "--file", help="Input SRT file path")
+    parser.add_argument("-m", "--model-name", default=DEFAULT_MODEL_NAME, help="Model name (One of Gemini or OpenAI models accessible via API)")
+    parser.add_argument("-b", "--batch-size", default=DEFAULT_BATCH_SIZE, help="Batch size (Number of subtitle entries sent to the LLM each time)", type=int)
+
+    args = parser.parse_args()
+    
+    main(args)
+    
