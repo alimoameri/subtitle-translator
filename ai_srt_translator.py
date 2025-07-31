@@ -2,7 +2,8 @@ import srt
 import chardet
 import argparse 
 import logging
-from translate_batch import translate_batch
+from batch_translate import batch_translate
+
 
 DEFAULT_SOURCE_LANG="English"
 DEFAULT_TARGET_LANG="Persian"
@@ -25,7 +26,7 @@ def read_srt_file(path):
         encoding = result['encoding']
 
         if encoding is None:
-            print("Error: Could not detect encoding.  Trying utf-8 as a fallback.")
+            logging.warning("Error: Could not detect encoding.  Trying utf-8 as a fallback.")
             encoding = 'utf-8'  # Fallback to UTF-8 if detection fails
 
         # Decode the data using the detected encoding
@@ -33,19 +34,19 @@ def read_srt_file(path):
         return srt_content
 
     except FileNotFoundError:
-        print(f"Error: Input file not found at {path}")
+        logging.exception("Error: Input file not found at %s", path)
         exit(1)
     except Exception as e:
-        print(f"Error reading input file: {e}")
+        logging.exception("Error reading input file: %s", e)
         exit(1)
 
 def write_srt_file(path, content):
     try:
         with open(path, 'w', encoding='utf-8') as f:
             f.write(content)
-        print(f"Successfully saved to {path}")
+        logging.info("Successfully saved to %s", path)
     except Exception as e:
-        print(f"Error writing output file: {e}")
+        logging.info("Error writing output file: %s", e)
         exit(1)
 
 def parse_srt_file(file_path):
@@ -63,68 +64,25 @@ def parse_srt_file(file_path):
         
     return original_subtitles
 
-
-def extract_texts_from_srt(subtitles: list) -> list:
-    texts =  [sub.content for sub in subtitles]
-    return texts
-
-def reconstruct_srt(subtitles, translated_texts):
-    """Reconstructs the SRT file content from original data and translated text."""
-    srt_output = []
-    for i, sub in enumerate(subtitles):
-        try:
-            entry = f"{sub['index']}\n{sub['timecode']}\n{translated_texts[i]}\n"  # Access the first element of the list
-            srt_output.append(entry)
-        except IndexError:
-            print(f"Warning: Skipping subtitle {i} due to translation error.")
-            continue
-
-    return "\n".join(srt_output)
-
 def main(args):
-    print(f"Starting SRT translation from {args.source} to {args.target}")
-    
-    try:
-        logging.info("Input file: %s", args.file)
-        output_file = args.file.replace(".txt", ".srt") if args.file.endswith(".txt") else args.file + f"_{args.target}.srt"
-        logging.info("Output file: %s", output_file)
-        logging.info("Model name: %s", args.model_name)
-    except AttributeError:
-        logging.exception("You should specify a srt file path with -f argument.")
-        exit(1)
-    
     # 1. Parse SRT file
     original_subtitles = parse_srt_file(args.file)
     if not original_subtitles:
         logging.error("Error: No subtitles found.")
         
     logging.info("Parsed %i subtitle entries.", len(original_subtitles))
-        
 
-    # 3. Extract texts for translation
-    texts_to_translate = extract_texts_from_srt(original_subtitles)
-
-    # 4. Translate the texts in batches
+    # 3. Translate the texts in batches
     try:
-        translated_chunks = translate_batch(texts_to_translate, args.source, args.target, args.model_name, args.batch_size)
+        translated_subtitles = batch_translate(original_subtitles, args.batch_size, args.source, args.target, args.model_name)
     except Exception as e:
         print(f"Translation failed: {e}")
         exit(1)
+    
+    translated_srt = srt.compose(translated_subtitles)
 
-    translated_texts = []
-    for chunk in translated_chunks:
-      translated_texts += chunk
-  
-    # 5. Reconstruct the SRT file with translated text
-    print("Reconstructing translated SRT file...")
-    try:
-        final_srt_content = reconstruct_srt(original_subtitles, translated_texts)
-    except ValueError as e:
-        print(f"Error during reconstruction: {e}")
-        exit(1)
-
-    # 6. Write the output SRT file
-    write_srt_file(output_file, final_srt_content)
+    # 4. Write the output SRT file
+    write_srt_file(output_file, translated_srt)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Translate SRT files using OpenAI or Google LLMs.")
@@ -135,6 +93,16 @@ if __name__ == "__main__":
     parser.add_argument("-b", "--batch-size", default=DEFAULT_BATCH_SIZE, help="Batch size (Number of subtitle entries sent to the LLM each time)", type=int)
 
     args = parser.parse_args()
+    
+    try:
+        logging.info("Input file: %s", args.file)
+        output_file = args.file.replace(".txt", ".srt") if args.file.endswith(".txt") else args.file + f"_{args.target}.srt"
+        logging.info("Output file: %s", output_file)
+        logging.info("Model name: %s", args.model_name)
+        logging.info("Batch size: %i", args.batch_size)
+    except AttributeError:
+        logging.exception("You should specify a srt file path with -f argument.")
+        exit(1)
     
     main(args)
     
