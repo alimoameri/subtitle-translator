@@ -1,6 +1,6 @@
 # Subtitle Translator Using LLMs
 
-This tool leverages large language models (LLMs) to translate subtitle files of any format (SRT, ASS, etc) files automatically. It handles the translation process by reading the subtitles, performing translation in batches, and then outputting a new file that maintains the original formatting and timing.
+This tool leverages large language models (LLMs) to translate subtitle files of any format (SRT, ASS, etc) automatically. It handles the translation process by reading the subtitles, performing translation in batches, and then outputting a new file that maintains the original formatting and timing.
 
 ## Features
 
