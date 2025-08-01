@@ -4,7 +4,7 @@ This tool leverages large language models (LLMs) to translate subtitle files of 
 
 ## Features
 
-*   **Automated Translation:** Translates SRT files from a source language to a target language using the Google models or OpenAI models accessible via API.
+*   **Automated Translation of Any Format:** Translates subtitles files of any format from a source language to a target language using the Google models or OpenAI models accessible via API.
 *   **Batch Processing:** The system processes subtitles in configurable batches. Parameter `-b/--batch-size` determines how many subtitle entries are sent to the LLM in each translation request.
 *   **Subtitle Format Preservation:**  Maintains the original SRT file structure (timecodes, sequence numbers). The system makes a best effort to preserve the original SRT file structure—including timecodes and sequence numbers.
 *   **HTML Tag Handling:**  Preserves HTML-like tags (e.g., `<i>`, `<b>`) within the subtitles.
