@@ -1,4 +1,3 @@
-import os
 import time
 import logging
 from tqdm import tqdm
@@ -35,8 +34,8 @@ def build_batch_prompt(subs, source_lang, target_lang):
     
     prompt += f"{source_lang} subtitles:\n"
     for idx, sub in enumerate(subs, 1):
-        # Remove line breaks inside the subtitle content for better formatting
-        prompt += f"{idx}. {sub.content.replace('\n',' ').strip()}\n"
+        # Remove line breaks (\N when parsing with pysub2) inside the subtitle content for better formatting
+        prompt += f"{idx}. {sub.text.replace('\\N',' ').strip()}\n"
     
     prompt += f"\n{target_lang} subtitles:\n"
     return prompt
@@ -57,12 +56,12 @@ def extract_lines_from_response(response):
             results.append(line.strip())
     return results
 
-def batch_translate(subs: list, batch_size: int, source_lang: str, target_lang: str, model_name: str):
+def batch_translate(subtitles: list, batch_size: int, source_lang: str, target_lang: str, model_name: str):
     """
     Main function to translate subtitles in batches using a specified LLM model.
     
     Args:
-        subs: list of subtitle objects (each with `.content`)
+        subtitles: list of subtitle objects (each with `.content`)
         batch_size: number of subtitles per translation batch
         source_lang: source language name (e.g., "English")
         target_lang: target language name (e.g., "Persian")
@@ -74,11 +73,11 @@ def batch_translate(subs: list, batch_size: int, source_lang: str, target_lang: 
     # Validate model selection
     if model_name == None:
         raise Exception("Specify model name with -m parameter.")
-    if not subs:
+    if not subtitles:
         return []
     
-    translated_texts = []
-    total_batches = (len(subs) + batch_size - 1) // batch_size  # total # of batches
+    dialogue_lines = [s for s in subtitles if s.text.strip()]
+    total_batches = (len(dialogue_lines) + batch_size - 1) // batch_size # total # of batches
 
     # Get API client instance from utility
     client = get_client(model_name)
@@ -88,28 +87,26 @@ def batch_translate(subs: list, batch_size: int, source_lang: str, target_lang: 
     WAIT_TIME_SECONDS = 30  # wait time after hitting rate limit
 
     # Process each batch
-    for i, batch in enumerate(tqdm(chunks(subs, batch_size), total=total_batches, desc="Translating")):
+    for i, batch in enumerate(tqdm(chunks(subtitles, batch_size), total=total_batches, desc="Translating")):
         prompt = build_batch_prompt(batch, source_lang, target_lang)
+        
         try:
             # Send prompt to LLM model
             response_text = get_response(client, model_name, prompt)
-
+            
             # Extract the translated lines
             translated_lines = extract_lines_from_response(response_text)
             
             # Ensure response has the same number of lines
             if len(translated_lines) != len(batch):
                 logging.error("Mismatch in lines. Batch index: %d", i)
-                logging.error("Original: %s", [s.content for s in batch])
+                logging.error("Original: %s", [s.text for s in batch])
                 logging.error("Translated: %s", translated_lines)
                 raise ValueError("Mismatch in number of lines returned from LLM.")
 
             # Assign translated text back to subtitle objects
             for sub, new_text in zip(batch, translated_lines):
-                sub.content = new_text
-
-            # Add translated batch to result
-            translated_texts.extend(batch)
+                sub.text = new_text
 
         except Exception as e:
             logging.exception("Error translating batch %d: %s", i, e)
@@ -119,4 +116,4 @@ def batch_translate(subs: list, batch_size: int, source_lang: str, target_lang: 
             logging.info(f"Waiting {WAIT_TIME_SECONDS} seconds for rate limits...")
             time.sleep(WAIT_TIME_SECONDS)
 
-    return translated_texts
+    return subtitles

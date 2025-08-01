@@ -1,0 +1,320 @@
+[Script Info]
+Title: English (US)
+Original Translation: 
+Original Editing: 
+Original Timing: 
+Synch Point: 
+Script Updated By: 
+Update Details: 
+ScriptType: v4.00+
+Collisions: Normal
+PlayResX: 640
+PlayResY: 360
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Roboto Medium,26,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,1.3,0,2,20,20,23,0
+Style: Main - Italics,Roboto Medium,26,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,-1,0,0,100,100,0,0,1,1.3,0,2,20,20,23,0
+Style: Main - Top,Roboto Medium,26,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,1.3,0,8,20,20,23,0
+Style: Main - Top + Italics,Roboto Medium,26,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,-1,0,0,100,100,0,0,1,1.3,0,8,20,20,23,0
+Style: Flashback,Roboto Medium,26,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,1.3,0,2,20,20,23,1
+Style: Flashback - Italics,Roboto Medium,26,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,-1,0,0,100,100,0,0,1,1.3,0,2,20,20,23,1
+Style: Flashback - Top,Roboto Medium,26,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,1.3,0,8,20,20,23,1
+Style: Flashback - Top + Italics,Roboto Medium,26,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,1.3,0,8,20,20,23,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:09.61,0:00:13.39,Default,Eto,0,0,0,,Mother Goddess, lend me your healing hand.
+Dialogue: 0,0:00:13.39,0:00:14.49,Default,Eto,0,0,0,,Lesser Heal.
+Dialogue: 0,0:00:18.19,0:00:20.36,Default,Amon,0,0,0,,Thank you for that, Eto.
+Dialogue: 0,0:00:20.91,0:00:22.16,Default,Eto,0,0,0,,You're quite welcome.
+Dialogue: 0,0:00:22.40,0:00:24.75,Default,Nils,0,0,0,,That was a pretty close call.
+Dialogue: 0,0:00:24.75,0:00:26.90,Default,Eto,0,0,0,,It certainly doesn't bode well.
+Dialogue: 0,0:00:26.90,0:00:30.92,Default,Eto,0,0,0,,There shouldn't be goblin archers\N on the fifth layer.
+Dialogue: 0,0:00:30.92,0:00:34.00,Default,Nils,0,0,0,,I say we head back to the surface for today.
+Dialogue: 0,0:00:34.00,0:00:36.89,Default,Nils,0,0,0,,Even split three ways, \Nwe've earned more than usual.
+Dialogue: 0,0:00:37.83,0:00:39.47,Default,Amon,0,0,0,,We're leaving already?
+Dialogue: 0,0:00:39.47,0:00:41.09,Default,Nils,0,0,0,,I don't wanna push it.
+Dialogue: 0,0:00:41.50,0:00:45.44,Default,Nils,0,0,0,,My motto is "survival is our primary duty."
+Dialogue: 0,0:00:45.44,0:00:47.62,Default,Eto,0,0,0,,Get that motto from Abel, did you?
+Dialogue: 0,0:00:47.62,0:00:50.23,Default,Nils,0,0,0,,Isn't it obvious that our lives\N should be our priority?!
+Dialogue: 0,0:00:51.15,0:00:52.87,Default,Amon,0,0,0,,You've got a point there.
+Dialogue: 0,0:00:54.14,0:00:57.01,Default,Amon,0,0,0,,It would've been nice\N if Ryo had come with us.
+Dialogue: 0,0:00:57.01,0:01:01.02,Default,Eto,0,0,0,,The norm is to form a party\Nof comparably skilled members, Amon.
+Dialogue: 0,0:01:01.02,0:01:03.99,Default,Nils,0,0,0,,Yeah, and we don't really compare to Ryo.
+Dialogue: 0,0:02:50.98,0:02:55.32,Default,Ryo,0,0,0,,Leonore's magic yesterday was incredible.
+Dialogue: 0,0:02:55.57,0:02:59.07,Default,Ryo,0,0,0,,But in terms of conjuring speed, \NI was on even footing.
+Dialogue: 0,0:03:00.73,0:03:03.07,Default,Ryo,0,0,0,,I need to expand on my strengths
+Dialogue: 0,0:03:03.07,0:03:06.60,Default,Ryo,0,0,0,,and shore up my weaknesses\Nto turn them into strengths.
+Dialogue: 0,0:03:06.60,0:03:08.10,Default,Ryo,0,0,0,,I can't think of any other way.
+Dialogue: 0,0:03:08.99,0:03:10.99,Default,Ryo,0,0,0,,There's also the matter of movement speed.
+Dialogue: 0,0:03:11.58,0:03:14.09,Default,Ryo,0,0,0,,That magic she used to close\Nin on me in a flash...
+Dialogue: 0,0:03:14.09,0:03:18.71,Default,Ryo,0,0,0,,It was probably wind magic.\N I'm kind of jealous.
+Dialogue: 0,0:03:18.71,0:03:22.22,Default,Ryo,0,0,0,,Then again, no sense \Nin envying what I can't have.
+Dialogue: 0,0:03:22.55,0:03:25.67,Default,Ryo,0,0,0,,I'll think up a way to move \Nswiftly with water magic.
+Dialogue: 0,0:03:26.10,0:03:30.34,Default,Ryo,0,0,0,,As possibilities go, the first spell \Nthat comes to mind is Water Jet.
+Dialogue: 0,0:03:30.81,0:03:36.27,Default,Ryo,0,0,0,,I've used it underwater to surface before,\N but as for using it on land...
+Dialogue: 0,0:03:39.95,0:03:41.06,Default,Ryo,0,0,0,,Ice Bahn.
+Dialogue: 0,0:03:46.31,0:03:49.74,Default,Ryo,0,0,0,,I'll have to picture it coming\Nfrom points all along my back.
+Dialogue: 0,0:03:50.12,0:03:53.16,Default,Ryo,0,0,0,,Water Jet 256!
+Dialogue: 0,0:04:05.82,0:04:07.00,Default,Ryo,0,0,0,,She's got me beat!
+Dialogue: 0,0:04:07.96,0:04:11.43,Default,Ryo,0,0,0,,Well, let's just call it a work in progress.
+Dialogue: 0,0:04:12.42,0:04:16.88,Default,Ryo,0,0,0,,Maybe it could work with 1,024 jets of water.
+Dialogue: 0,0:04:16.88,0:04:18.43,Default,Ryo,0,0,0,,Now, to the library!
+Dialogue: 0,0:04:18.43,0:04:22.85,Default,Ryo,0,0,0,,I want to look up more \Nabout akumas and alchemy.
+Dialogue: 0,0:04:30.60,0:04:34.04,Default,Lyn,0,0,0,,Nothing in the forbidden spellbooks either.
+Dialogue: 0,0:04:34.43,0:04:36.50,Default,Lyn,0,0,0,,Well, of course there wouldn't be.
+Dialogue: 0,0:04:36.50,0:04:39.89,Default,Lyn,0,0,0,,Magic capable of conjuring\N a thick Ice Wall midair
+Dialogue: 0,0:04:39.89,0:04:44.01,Default,Lyn,0,0,0,,or spears of ice strong enough \Nto pierce a wyvern's defenses...
+Dialogue: 0,0:04:44.23,0:04:47.50,Default,Lyn,0,0,0,,Not even Master Hilarion could manage that.
+Dialogue: 0,0:04:47.50,0:04:50.10,Default,Lyn,0,0,0,,If it exists at all, \Nthey'd have to be original spells.
+Dialogue: 0,0:04:50.74,0:04:55.73,Default,Lyn,0,0,0,,Granted, it'd take someone like the empire's\N Inferno Magician to cast such a thing.
+Dialogue: 0,0:04:55.73,0:04:58.69,Default,Sera,0,0,0,,Why, Lyn. It's good to see you again.
+Dialogue: 0,0:04:59.63,0:05:02.30,Default,Lyn,0,0,0,,Oh, Sera! Hello.
+Dialogue: 0,0:05:02.81,0:05:06.45,Default,Sera,0,0,0,,It's rare to find you here, much less \Nlooking through tomes like those.
+Dialogue: 0,0:05:06.67,0:05:08.50,Default,Lyn,0,0,0,,I was trying to look something up.
+Dialogue: 0,0:05:09.02,0:05:11.29,Default,Lyn,0,0,0,,But in the end, it wasn't in here.
+Dialogue: 0,0:05:11.29,0:05:14.25,Default,Sera,0,0,0,,I see. That's a shame.
+Dialogue: 0,0:05:15.66,0:05:17.21,Default,Lyn,0,0,0,,Listen, Sera...
+Dialogue: 0,0:05:18.29,0:05:19.27,Default,Sera,0,0,0,,What's wrong?
+Dialogue: 0,0:05:22.14,0:05:23.05,Default,Lyn,0,0,0,,Nothing.
+Dialogue: 0,0:05:23.63,0:05:28.10,Default,Lyn,0,0,0,,You were away from Lune on a quest \Nfor the royal capital, right?
+Dialogue: 0,0:05:28.10,0:05:31.41,Default,Sera,0,0,0,,I was. I just got back.
+Dialogue: 0,0:05:31.41,0:05:36.05,Default,Sera,0,0,0,,Oh, and I'm sorry, but I'm already \Nkeeping an envoy waiting.
+Dialogue: 0,0:05:36.05,0:05:37.54,Default,Sera,0,0,0,,Another time, shall we?
+Dialogue: 0,0:05:46.59,0:05:50.66,Default,Nils,0,0,0,,M-M-M-Miss Nina! Y-You're as l-l-l-l-lovely—
+Dialogue: 0,0:05:51.10,0:05:54.37,Default,Nina,0,0,0,,Welcome back. That was a short excursion.
+Dialogue: 0,0:05:54.59,0:05:57.63,Default,Eto,0,0,0,,There's actually a reason for that.
+Dialogue: 0,0:05:59.43,0:06:02.94,Default,Nina,0,0,0,,Indeed, this is certainly\Nmagic stone from goblin archers.
+Dialogue: 0,0:06:03.43,0:06:07.03,Default,Nina,0,0,0,,But there's been no sign of them\Non the fifth layer for years.
+Dialogue: 0,0:06:07.37,0:06:11.39,Default,Eto,0,0,0,,That's what we thought, which is why\N we wanted to let you know.
+Dialogue: 0,0:06:11.66,0:06:14.08,Default,Nina,0,0,0,,I'll inform the guild master at once.
+Dialogue: 0,0:06:14.08,0:06:16.41,Default,Nina,0,0,0,,I'll post a notice on the board as well.
+Dialogue: 0,0:06:17.27,0:06:20.81,Default,Nina,0,0,0,,Thank you for bringing this to our attention.
+Dialogue: 0,0:06:20.81,0:06:22.74,Default,Nils,0,0,0,,Aw, Nina...
+Dialogue: 0,0:06:22.74,0:06:25.92,Default,Eto,0,0,0,,Come on, Amon.\N We need to sell this magic stone.
+Dialogue: 0,0:06:25.92,0:06:26.81,Default,Amon,0,0,0,,Right!
+Dialogue: 0,0:06:31.63,0:06:34.17,Default,Hugh,0,0,0,,Goblin archers on the fifth layer?
+Dialogue: 0,0:06:34.76,0:06:37.56,Default,Hugh,0,0,0,,They're not supposed to show up \Nuntil after the tenth.
+Dialogue: 0,0:06:37.56,0:06:39.12,Default,Nina,0,0,0,,That's right, sir.
+Dialogue: 0,0:06:39.12,0:06:42.09,Default,Hugh,0,0,0,,This could be a warning sign.
+Dialogue: 0,0:06:42.09,0:06:44.55,Default,Hugh,0,0,0,,How many B-rank parties are in town?
+Dialogue: 0,0:06:44.55,0:06:47.46,Default,Nina,0,0,0,,The Crimson Sword and White Brigade.
+Dialogue: 0,0:06:47.46,0:06:50.26,Default,Hugh,0,0,0,,Is the Brigade's main force \Nunder Phelps present?
+Dialogue: 0,0:06:50.26,0:06:54.72,Default,Nina,0,0,0,,Yes. They just returned from an excursion \Ntwo days ago, so they should still be around.
+Dialogue: 0,0:06:54.72,0:06:59.90,Default,Hugh,0,0,0,,Okay, summon both the \NCrimson Sword and White Brigade.
+Dialogue: 0,0:07:00.76,0:07:03.07,Default,Hugh,0,0,0,,I'll make the offer here in this office.
+Dialogue: 0,0:07:04.97,0:07:06.73,Default,Abel,0,0,0,,The Brigade's coming too, right?
+Dialogue: 0,0:07:07.22,0:07:09.19,Default,Abel,0,0,0,,I never know how to deal with them.
+Dialogue: 0,0:07:09.19,0:07:11.74,Default,Rihya,0,0,0,,It's a little late for that.
+Dialogue: 0,0:07:11.74,0:07:14.96,Default,Rihya,0,0,0,,Besides, haven't you two been \Nacquaintances for a long time?
+Dialogue: 0,0:07:14.96,0:07:18.92,Default,Lyn,0,0,0,,Honestly. You never stop whining, do you, Abel?
+Dialogue: 0,0:07:18.92,0:07:21.37,Default,Lyn,0,0,0,,You could learn from Warren's example.
+Dialogue: 0,0:07:28.80,0:07:29.67,Default,Hugh,0,0,0,,Come in.
+Dialogue: 0,0:07:30.13,0:07:31.63,Default,Abel,0,0,0,,Pardon us.
+Dialogue: 0,0:07:38.44,0:07:40.31,Default,Phelps,0,0,0,,Hello there, Abel.
+Dialogue: 0,0:07:40.77,0:07:43.15,Default,Abel,0,0,0,,Good day to you, Phelps.
+Dialogue: 0,0:07:43.15,0:07:46.09,Default,Phelps,0,0,0,,It's that same greeting every \Ntime with you, isn't it, Abel?
+Dialogue: 0,0:07:48.06,0:07:52.86,Default,Hugh,0,0,0,,I want to thank both the Crimson Sword\Nand White Brigade for coming.
+Dialogue: 0,0:07:53.49,0:07:56.60,Default,Hugh,0,0,0,,I'm sure the clerk gave you\N the gist of things,
+Dialogue: 0,0:07:56.60,0:08:00.45,Default,Hugh,0,0,0,,but goblin archers have been spotted\Non the fifth layer of the dungeon.
+Dialogue: 0,0:08:00.70,0:08:03.42,Default,Abel,0,0,0,,Master, how certain is this information?
+Dialogue: 0,0:08:03.42,0:08:05.25,Default,Hugh,0,0,0,,One hundred percent.
+Dialogue: 0,0:08:05.25,0:08:11.09,Default,Hugh,0,0,0,,The adventurers who encountered them\Ncame back with their magic stone.
+Dialogue: 0,0:08:11.09,0:08:14.01,Default,Phelps,0,0,0,,Then the intel is good.
+Dialogue: 0,0:08:14.53,0:08:18.56,Default,Phelps,0,0,0,,So, what exactly would you have us do?
+Dialogue: 0,0:08:19.90,0:08:23.53,Default,Hugh,0,0,0,,The Crimson Sword and White Brigade\Nare to enter the dungeon
+Dialogue: 0,0:08:23.53,0:08:26.77,Default,Hugh,0,0,0,,and verify any signs of the Great Tidal Bore.
+Dialogue: 0,0:08:27.23,0:08:29.02,Default,Lyn,0,0,0,,The Great Tidal Bore...
+Dialogue: 0,0:08:29.26,0:08:33.02,Default,Hugh,0,0,0,,It refers to an explosive growth \Nin monster populations.
+Dialogue: 0,0:08:33.47,0:08:37.37,Default,Hugh,0,0,0,,It's been just about ten years\N since the last one...
+Dialogue: 0,0:08:37.37,0:08:40.83,Default,Hugh,0,0,0,,Meaning we could be due\N for another at any moment.
+Dialogue: 0,0:08:40.83,0:08:47.79,Default,Rihya,0,0,0,,Goblin archers appearing on the fifth \Nlayer may very well be an early sign.
+Dialogue: 0,0:08:47.79,0:08:50.69,Default,Hugh,0,0,0,,You'll be paid 100 gold coins in advance
+Dialogue: 0,0:08:50.69,0:08:53.97,Default,Hugh,0,0,0,,and another 200 upon completion.
+Dialogue: 0,0:08:53.97,0:08:56.81,Default,Abel,0,0,0,,Just to confirm, guild master,
+Dialogue: 0,0:08:56.81,0:08:59.28,Default,Abel,0,0,0,,we're only to verify whether it's coming?
+Dialogue: 0,0:08:59.28,0:09:01.97,Default,Hugh,0,0,0,,Yeah. I need to know how likely that is.
+Dialogue: 0,0:09:01.97,0:09:04.06,Default,Phelps,0,0,0,,And if it's already underway?
+Dialogue: 0,0:09:04.06,0:09:07.56,Default,Hugh,0,0,0,,Should you confirm that, \Nreturn to the surface posthaste.
+Dialogue: 0,0:09:07.56,0:09:12.33,Default,Hugh,0,0,0,,We'll abandon the dungeon entrance\N and set up on the double walls
+Dialogue: 0,0:09:12.33,0:09:15.07,Default,Hugh,0,0,0,,in a joint operation between the guild\N and regional knights.
+Dialogue: 0,0:09:15.07,0:09:20.53,Default,Hugh,0,0,0,,I've already notified the lord of this quest\Nand my plans for defensive action.
+Dialogue: 0,0:09:20.53,0:09:22.50,Default,Abel,0,0,0,,That's a lot of groundwork.
+Dialogue: 0,0:09:22.50,0:09:25.12,Default,Abel,0,0,0,,I'd almost think you believe \Nthe bore is already underway.
+Dialogue: 0,0:09:25.12,0:09:27.60,Default,Hugh,0,0,0,,You can never be too prepared.
+Dialogue: 0,0:09:27.60,0:09:31.48,Default,Hugh,0,0,0,,Because if this {\i1}is{\i0} the Great Tidal Bore, \Nwe'll need all the forces we can muster.
+Dialogue: 0,0:09:31.48,0:09:32.73,Default,Phelps,0,0,0,,When should we depart?
+Dialogue: 0,0:09:32.73,0:09:35.67,Default,Hugh,0,0,0,,First thing tomorrow morning.
+Dialogue: 0,0:09:35.67,0:09:39.97,Default,Hugh,0,0,0,,We've already put a notice on the board \Nsaying the dungeon is closed in the meantime.
+Dialogue: 0,0:09:40.69,0:09:45.65,Default,Hugh,0,0,0,,So, the Crimson Sword, White Brigade, \Nwill you accept this quest?
+Dialogue: 0,0:09:47.48,0:09:51.65,Default,Abel,0,0,0,,Yes. The Crimson Sword accepts.
+Dialogue: 0,0:09:51.65,0:09:55.07,Default,Phelps,0,0,0,,White Brigade accepts this quest.
+Dialogue: 0,0:10:01.76,0:10:05.64,Default,Nils,0,0,0,,Huh? You headed out already, Ryo?
+Dialogue: 0,0:10:05.64,0:10:09.67,Default,Ryo,0,0,0,,Yes. I was thinking of visiting \Nthe north side library today.
+Dialogue: 0,0:10:09.67,0:10:11.02,Default,Eto,0,0,0,,The north side one?
+Dialogue: 0,0:10:11.02,0:10:13.48,Default,Ryo,0,0,0,,I hear it has a wider selection\Nof advanced material.
+Dialogue: 0,0:10:13.48,0:10:19.18,Default,Ryo,0,0,0,,I'm hoping to learn more about alchemy \Nthan what the south side library offers.
+Dialogue: 0,0:10:19.44,0:10:21.76,Main - Italics,Ryo,0,0,0,,There's also the matter of akumas.
+Dialogue: 0,0:10:22.09,0:10:25.91,Default,Eto,0,0,0,,Makes sense you'd want to check out \Nthe north side location, then.
+Dialogue: 0,0:10:25.91,0:10:30.61,Default,Eto,0,0,0,,Only D-rank adventurers can enter it,\N but you're set for that, Ryo.
+Dialogue: 0,0:10:30.61,0:10:33.14,Default,Amon,0,0,0,,I've only heard rumors before...
+Dialogue: 0,0:10:33.14,0:10:35.23,Default,Amon,0,0,0,,Is it true they have forbidden texts?
+Dialogue: 0,0:10:35.23,0:10:36.61,Default,Ryo,0,0,0,,Forbidden texts?!
+Dialogue: 0,0:10:36.88,0:10:40.24,Default,Eto,0,0,0,,Except you need to be B-rank to read them.
+Dialogue: 0,0:10:40.24,0:10:43.25,Default,Ryo,0,0,0,,Aw, that's a shame.
+Dialogue: 0,0:10:43.25,0:10:47.00,Default,Nills,0,0,0,,Knowing you, Ryo, you'll \Nbe qualified soon enough.
+Dialogue: 0,0:10:47.00,0:10:49.69,Default,Nills,0,0,0,,Welp, we'd better get ready ourselves.
+Dialogue: 0,0:10:50.01,0:10:52.83,Default,Ryo,0,0,0,,Hitting the dungeon again today, Nils?
+Dialogue: 0,0:10:53.08,0:10:55.00,Default,Nils,0,0,0,,Yeah! That's the plan.
+Dialogue: 0,0:10:55.00,0:10:56.85,Default,Ryo,0,0,0,,Good luck, then.
+Dialogue: 0,0:10:56.85,0:10:59.37,Default,Nils,0,0,0,,I hope you find what you're looking for.
+Dialogue: 0,0:10:59.37,0:11:01.22,Default,Amon,0,0,0,,Have a safe trip, Ryo.
+Dialogue: 0,0:11:01.67,0:11:02.79,Default,Ryo,0,0,0,,I'll be back.
+Dialogue: 0,0:11:17.97,0:11:19.19,Default,Librarian,0,0,0,,Please take this.
+Dialogue: 0,0:11:27.59,0:11:30.25,Default,Ryo,0,0,0,,The south side library is bigger...
+Dialogue: 0,0:11:30.57,0:11:32.82,Default,Ryo,0,0,0,,But there's something\N about the atmosphere here.
+Dialogue: 0,0:11:37.67,0:11:39.03,Default,Ryo,0,0,0,,I like it.
+Dialogue: 0,0:11:39.81,0:11:42.03,Default,Ryo,0,0,0,,I'm probably going to need to ask
+Dialogue: 0,0:11:42.03,0:11:45.01,Default,Ryo,0,0,0,,where to find the books \NI'm looking for, though.
+Dialogue: 0,0:11:46.30,0:11:51.77,Default,Ryo,0,0,0,,I bet they'll look at me like I'm crazy \Nif I mention wanting to learn about akumas.
+Dialogue: 0,0:12:11.85,0:12:14.13,Default,Abel,0,0,0,,Good day to you, Phelps.
+Dialogue: 0,0:12:14.53,0:12:15.95,Default,Phelps,0,0,0,,Good morning, Abel.
+Dialogue: 0,0:12:16.38,0:12:17.70,Default,Abel,0,0,0,,You've got about twenty?
+Dialogue: 0,0:12:17.70,0:12:20.51,Default,Phelps,0,0,0,,Yeah. Around half of the Brigade.
+Dialogue: 0,0:12:20.92,0:12:24.62,Default,Phelps,0,0,0,,We're only taking C-rankers \Nand above with us this time.
+Dialogue: 0,0:12:25.07,0:12:26.47,Default,Abel,0,0,0,,That's wise.
+Dialogue: 0,0:12:27.13,0:12:28.90,Default,Hugh,0,0,0,,Everyone's here, then?
+Dialogue: 0,0:12:29.24,0:12:30.82,Default,Hugh,0,0,0,,Better get underway.
+Dialogue: 0,0:12:31.62,0:12:32.81,Default,Abel,0,0,0,,Hold on, guild master.
+Dialogue: 0,0:12:32.81,0:12:34.70,Default,Hugh,0,0,0,,Something wrong, Abel?
+Dialogue: 0,0:12:38.78,0:12:40.60,Default,Abel,0,0,0,,I've got a bad feeling about this.
+Dialogue: 0,0:12:41.34,0:12:44.45,Default,Abel,0,0,0,,Lyn, use the wind spell Probe\Nto scan the first layer.
+Dialogue: 0,0:12:44.45,0:12:45.65,Default,Lyn,0,0,0,,Okay.
+Dialogue: 0,0:12:49.34,0:12:53.41,Default,Lyn,0,0,0,,Bring to me the pulse and existence of life.
+Dialogue: 0,0:12:53.41,0:12:54.44,Default,Lyn,0,0,0,,Probe!
+Dialogue: 0,0:13:03.09,0:13:04.17,Default,Lyn,0,0,0,,They're...
+Dialogue: 0,0:13:04.17,0:13:08.47,Default,Lyn,0,0,0,,Multiple hits at the entrance!\N And I mean more than a few hundred!
+Dialogue: 0,0:13:08.47,0:13:10.47,Default,Abel,0,0,0,,I thought as much.
+Dialogue: 0,0:13:10.47,0:13:13.40,Default,Phelps,0,0,0,,Then the Great Tidal Bore is nearly upon us.
+Dialogue: 0,0:13:13.40,0:13:14.99,Default,Hugh,0,0,0,,Unbelievable.
+Dialogue: 0,0:13:14.99,0:13:18.52,Default,Hugh,0,0,0,,Everyone, pull back! Get word \Nto the knights and the guild!
+Dialogue: 0,0:13:18.52,0:13:20.73,Default,Hugh,0,0,0,,Monsters will be here any minute!
+Dialogue: 0,0:13:25.15,0:13:28.66,Default,Amon,0,0,0,,It says no one's allowed in the dungeon.
+Dialogue: 0,0:13:28.66,0:13:32.04,Default,Eto,0,0,0,,I bet it has something to do \Nwith those goblin archers.
+Dialogue: 0,0:13:32.34,0:13:34.69,Default,Eto,0,0,0,,Maybe it's more serious than we—
+Dialogue: 0,0:13:34.69,0:13:36.33,Default,Messenger,0,0,0,,The Great Tidal Bore is underway!
+Dialogue: 0,0:13:36.33,0:13:38.07,Default,Messenger,0,0,0,,The monsters are surfacing!
+Dialogue: 0,0:13:38.07,0:13:40.73,Default,Messenger,0,0,0,,This is an emergency quest \Nof the highest priority!
+Dialogue: 0,0:13:40.73,0:13:43.51,Default,Messenger,0,0,0,,Position yourselves above\Nthe dungeon's first wall and attack!
+Dialogue: 0,0:13:43.51,0:13:45.09,Default,Messenger,0,0,0,,Please, hurry!
+Dialogue: 0,0:13:53.96,0:13:55.98,Default,Sera,0,0,0,,It's you again.
+Dialogue: 0,0:13:56.46,0:13:59.26,Default,Sera,0,0,0,,So you're a local adventurer.
+Dialogue: 0,0:14:04.70,0:14:06.99,Default,Sera,0,0,0,,My name is Sera. It's a pleasure.
+Dialogue: 0,0:14:06.99,0:14:09.99,Default,Ryo,0,0,0,,Oh, yes. I'm Ryo, an adventurer.
+Dialogue: 0,0:14:10.44,0:14:13.87,Default,Sera,0,0,0,,I had a feeling we'd meet again.
+Dialogue: 0,0:14:15.59,0:14:18.80,Default,Sera,0,0,0,,What brings you to the library? \NLooking for something?
+Dialogue: 0,0:14:18.80,0:14:20.41,Default,Ryo,0,0,0,,Oh, yes.
+Dialogue: 0,0:14:20.41,0:14:25.46,Default,Ryo,0,0,0,,I'm looking for books on aku—\N I mean, alchemy.
+Dialogue: 0,0:14:25.46,0:14:28.43,Default,Sera,0,0,0,,Alchemy? How unusual.
+Dialogue: 0,0:14:28.43,0:14:33.97,Default,Ryo,0,0,0,,Well, I'm in no rush, but ultimately, \NI'd like to create a golem.
+Dialogue: 0,0:14:33.97,0:14:38.18,Default,Sera,0,0,0,,A golem?! That's a grand ambition.
+Dialogue: 0,0:14:39.21,0:14:44.97,Default,Sera,0,0,0,,I don't think any of the books here \Nspecifically contain anything on golemcraft,
+Dialogue: 0,0:14:44.97,0:14:48.19,Default,Sera,0,0,0,,but there are a few that \Ncould help show you the way.
+Dialogue: 0,0:14:51.45,0:14:54.99,Default,Sera,0,0,0,,Follow me. I know where just about \Neverything is in this place.
+Dialogue: 0,0:14:55.79,0:14:56.95,Default,Ryo,0,0,0,,You don't mind?
+Dialogue: 0,0:14:57.24,0:14:58.25,Default,Sera,0,0,0,,Of course not.
+Dialogue: 0,0:15:05.48,0:15:07.36,Default,Sera,0,0,0,,So do you like books, Ryo?
+Dialogue: 0,0:15:07.36,0:15:10.86,Default,Ryo,0,0,0,,Yes. I used to read all the time.
+Dialogue: 0,0:15:10.86,0:15:14.64,Default,Ryo,0,0,0,,I haven't been around them in ages, though,
+Dialogue: 0,0:15:14.87,0:15:17.14,Default,Ryo,0,0,0,,so a place like this feels nostalgic.
+Dialogue: 0,0:15:17.14,0:15:22.23,Default,Sera,0,0,0,,"Ages ago"? You make it \Nsound like it's been decades.
+Dialogue: 0,0:15:22.23,0:15:27.61,Default,Ryo,0,0,0,,W-Well... you're an elf, right, Sera?
+Dialogue: 0,0:15:27.61,0:15:32.44,Default,Sera,0,0,0,,I am indeed. And an adventurer, \Nmuch like yourself.
+Dialogue: 0,0:15:32.98,0:15:35.15,Default,Sera,0,0,0,,I belong to a B-rank party called Wind.
+Dialogue: 0,0:15:35.49,0:15:38.28,Default,Sera,0,0,0,,Although I'm actually the sole member.
+Dialogue: 0,0:15:38.28,0:15:42.92,Default,Ryo,0,0,0,,A friend of mine mentioned \Nthere was only one elf in town.
+Dialogue: 0,0:15:42.92,0:15:47.73,Default,Sera,0,0,0,,They're right. You don't find \Ntoo many elves in human settlements.
+Dialogue: 0,0:15:47.73,0:15:50.13,Default,Sera,0,0,0,,I might be a bit of an oddball.
+Dialogue: 0,0:15:51.22,0:15:53.51,Default,Sera,0,0,0,,But thanks to that, I got to meet you.
+Dialogue: 0,0:15:54.49,0:15:56.09,Default,Sera,0,0,0,,That's a good thing.
+Dialogue: 0,0:16:02.23,0:16:04.19,Default,Sera,0,0,0,,I believe they're down this way.
+Dialogue: 0,0:16:04.50,0:16:06.59,Default,Sera,0,0,0,,Come, let's look for them.
+Dialogue: 0,0:16:22.47,0:16:23.27,Default,Hugh,0,0,0,,Here they come.
+Dialogue: 0,0:16:39.06,0:16:40.52,Default,Hugh,0,0,0,,Commence the attack!
+Dialogue: 0,0:16:40.77,0:16:42.43,Default,Hugh,0,0,0,,Wear them down at range!
+Dialogue: 0,0:16:42.71,0:16:45.15,Default,Hugh,0,0,0,,Keep those arrows and spells coming!
+Dialogue: 0,0:17:06.79,0:17:08.17,Default,Neville,0,0,0,,Get in position at once!
+Dialogue: 0,0:17:08.49,0:17:10.84,Default,Neville,0,0,0,,We'll keep the northern side secure!
+Dialogue: 0,0:17:11.06,0:17:13.09,Default,Abel,0,0,0,,Margrave Lune's knights!
+Dialogue: 0,0:17:13.09,0:17:17.55,Default,Hugh,0,0,0,,I'm sure glad I had that meeting with \NCommander Neville yesterday now.
+Dialogue: 0,0:17:22.73,0:17:23.89,Main - Italics,Hugh,0,0,0,,But even then...
+Dialogue: 0,0:17:29.42,0:17:31.52,Main - Italics,Hugh,0,0,0,,Just look at all of them.
+Dialogue: 0,0:17:34.32,0:17:37.08,Main - Italics,Hugh,0,0,0,,There were nowhere near this many last time!
+Dialogue: 0,0:17:47.79,0:17:49.54,Default,Phelps,0,0,0,,This is going to be a long battle!
+Dialogue: 0,0:17:49.54,0:17:52.59,Default,Phelps,0,0,0,,Don't forget to stay hydrated!
+Dialogue: 0,0:17:52.59,0:17:56.05,Default,Phelps,0,0,0,,We're still only dealing with \Ngoblins and goblin archers!
+Dialogue: 0,0:17:56.05,0:17:58.01,Default,Phelps,0,0,0,,Stay on your toes!
+Dialogue: 0,0:17:58.01,0:18:02.53,Default,Abel,0,0,0,,Lyn, we're nowhere close to done.\NConserve your mana.
+Dialogue: 0,0:18:02.53,0:18:04.06,Default,Lyn,0,0,0,,Got it.
+Dialogue: 0,0:18:04.06,0:18:07.94,Default,Abel,0,0,0,,That said... if you have any spells \Nto clear them all out,
+Dialogue: 0,0:18:07.94,0:18:09.23,Default,Abel,0,0,0,,please, cast away!
+Dialogue: 0,0:18:09.23,0:18:10.84,Default,Lyn,0,0,0,,Of course I don't!
+Dialogue: 0,0:18:10.84,0:18:12.77,Default,Lyn,0,0,0,,Don't make me spell that out!
+Dialogue: 0,0:18:12.77,0:18:14.90,Default,Rihya,0,0,0,,Abel, we're out of arrows.
+Dialogue: 0,0:18:17.11,0:18:21.41,Default,Messenger,0,0,0,,Master! We've requisitioned arrows \Nfrom every weapon store in town!
+Dialogue: 0,0:18:21.41,0:18:23.79,Default,Hugh,0,0,0,,Good! Hurry and distribute them!
+Dialogue: 0,0:18:23.79,0:18:25.20,Default,Nils,0,0,0,,Abel! More arrows!
+Dialogue: 0,0:18:26.54,0:18:27.90,Default,Abel,0,0,0,,Nils? I appreciate it.
+Dialogue: 0,0:18:27.90,0:18:30.42,Default,Nils,0,0,0,,I've also got a message\N from the guild master.
+Dialogue: 0,0:18:30.67,0:18:33.05,Default,Nils,0,0,0,,"There should be a big one \Nwaiting behind the fodder."
+Dialogue: 0,0:18:33.05,0:18:37.92,Default,Nils,0,0,0,,"The Crimson Sword will be taking \Nit on, so be prepared," he says.
+Dialogue: 0,0:18:37.92,0:18:39.21,Default,Abel,0,0,0,,Makes sense.
+Dialogue: 0,0:18:39.67,0:18:42.60,Default,Abel,0,0,0,,Tell him message received.
+Dialogue: 0,0:18:42.60,0:18:44.76,Default,Nils,0,0,0,,Okay. Good luck to you.
+Dialogue: 0,0:19:01.03,0:19:02.74,Default,Hugh,0,0,0,,It should be time.
+Dialogue: 0,0:19:02.99,0:19:06.71,Default,Hugh,0,0,0,,The Crimson Sword, White Brigade! \NDescend the wall!
+Dialogue: 0,0:19:07.98,0:19:10.04,Default,Hugh,0,0,0,,We're going on the attack!
+Dialogue: 0,0:19:10.04,0:19:13.63,Default,Lyn,0,0,0,,Wind, become the wings that let us land safely.
+Dialogue: 0,0:19:13.63,0:19:14.59,Default,Lyn,0,0,0,,Wind Wings!
+Dialogue: 0,0:19:22.68,0:19:26.15,Default,Shenna,0,0,0,,Earth, become our shield \Nand protect us against evil.
+Dialogue: 0,0:19:26.15,0:19:27.43,Default,Shenna,0,0,0,,Clay Wall!
+Dialogue: 0,0:19:40.92,0:19:42.82,Default,Abel,0,0,0,,A goblin general...
+Dialogue: 0,0:19:42.82,0:19:45.16,Default,Phelps,0,0,0,,This will be over once he's down.
+Dialogue: 0,0:19:45.40,0:19:46.37,Default,Abel,0,0,0,,No, wait.
+Dialogue: 0,0:19:48.27,0:19:51.29,Default,Shenna,0,0,0,,There are three goblin generals.
+Dialogue: 0,0:19:51.96,0:19:53.38,Default,Rihya,0,0,0,,Which means...
+Dialogue: 0,0:19:53.82,0:19:57.22,Default,Abel,0,0,0,,Yeah. There's a king back there.
+Dialogue: 0,0:20:02.65,0:20:04.59,Default,Abel,0,0,0,,Phelps and I will each take one.
+Dialogue: 0,0:20:04.59,0:20:07.95,Default,Abel,0,0,0,,Rihya, Shenna, you two handle the last one.
+Dialogue: 0,0:20:09.24,0:20:11.40,Default,Abel,0,0,0,,We need to finish them\Nbefore the king arrives!
+Dialogue: 0,0:20:19.57,0:20:21.15,Default,Rihya,0,0,0,,Light Javelin!
+Dialogue: 0,0:20:27.16,0:20:28.19,Default,Abel,0,0,0,,Good!
+Dialogue: 0,0:20:32.82,0:20:34.37,Default,Abel,0,0,0,,Get down!
+Dialogue: 0,0:20:42.59,0:20:43.89,Default,Phelps,0,0,0,,What was that?!
+Dialogue: 0,0:20:44.30,0:20:45.84,Default,Rihya,0,0,0,,Air Slash.
+Dialogue: 0,0:20:45.84,0:20:49.51,Default,Rihya,0,0,0,,But stronger and faster \Nthan I've ever seen before.
+Dialogue: 0,0:20:50.23,0:20:52.48,Main - Italics,Abel,0,0,0,,That was just a swing of his arm.
+Dialogue: 0,0:20:55.40,0:20:58.49,Main - Italics,Abel,0,0,0,,He was ready to kill his generals\Nright along with us.
+Dialogue: 0,0:20:59.00,0:21:00.25,Main - Italics,Abel,0,0,0,,What a monster!
+Dialogue: 0,0:21:06.33,0:21:07.12,Default,Phelps,0,0,0,,What?!
+Dialogue: 0,0:21:10.79,0:21:12.29,Main - Italics,Hugh,0,0,0,,I'm counting on you.
+Dialogue: 0,0:21:12.29,0:21:17.25,Main - Italics,Hugh,0,0,0,,Your magic sword and spear are the only \Nweapons that can hold up against that thing.
+Dialogue: 0,0:21:21.78,0:21:24.38,Default,Phelps,0,0,0,,Not good... Abel?!
+Dialogue: 0,0:21:26.47,0:21:28.97,Default,Abel,0,0,0,,Sword Skill: Perfect Shadow!
+Dialogue: 0,0:21:30.22,0:21:31.35,Default,Abel,0,0,0,,Combat Skill:
+Dialogue: 0,0:21:33.18,0:21:34.78,Default,Abel,0,0,0,,Total Impalement!
+Dialogue: 0,0:21:36.98,0:21:38.62,Default,Phelps,0,0,0,,It didn't finish him!
+Dialogue: 0,0:21:38.62,0:21:40.94,Default,Abel,0,0,0,,I didn't expect it to! Lyn!
+Dialogue: 0,0:21:41.90,0:21:43.11,Default,Lyn,0,0,0,,Bullet Rain!
+Dialogue: 0,0:21:45.11,0:21:46.13,Default,Abel,0,0,0,,Perfect Shadow.
+Dialogue: 0,0:22:03.39,0:22:04.84,Default,Hugh,0,0,0,,It's finally over...
+Dialogue: 0,0:22:09.70,0:22:15.07,Default,Phelps,0,0,0,,So she was invoking \NBullet Rain that entire time, then?
+Dialogue: 0,0:22:15.07,0:22:19.02,Default,Abel,0,0,0,,It's a powerful spell, \Nbut the incantation is long.
+Dialogue: 0,0:22:19.02,0:22:20.52,Default,Abel,0,0,0,,You could call it a secret weapon.
+Dialogue: 0,0:22:20.52,0:22:23.26,Default,Phelps,0,0,0,,I'm impressed, Crimson Sword.
+Dialogue: 0,0:22:34.21,0:22:35.97,Default,Abel,0,0,0,,However it ended,
+Dialogue: 0,0:22:38.19,0:22:40.19,Default,Abel,0,0,0,,I'm just glad we all made it out alive.
+

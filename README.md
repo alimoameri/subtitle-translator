@@ -1,6 +1,6 @@
-# SRT Translator Using LLMs
+# Subtitle Translator Using LLMs
 
-This tool leverages large language models (LLMs) to translate SRT (SubRip Subtitle) files automatically. It handles the translation process by reading the subtitles, performing translation in batches, and then outputting a new SRT file that maintains the original formatting and timing. The system is optimized for English to Persian translation.
+This tool leverages large language models (LLMs) to translate subtitle files of any format (SRT, ASS, etc) files automatically. It handles the translation process by reading the subtitles, performing translation in batches, and then outputting a new file that maintains the original formatting and timing.
 
 ## Features
 
@@ -62,7 +62,7 @@ options:
   * `-t`, `--target`
                         Target language (Default is Persian)
 
-  * `-f`, `--file` Input SRT file path
+  * `-f`, `--file` Input subtitle file path
 
   * `-m`, `--model-name`
                         Model name (One of Gemini or OpenAI models accesible via API, Default is gemini-2.0-flash)
@@ -78,7 +78,7 @@ To translate `Spider-man-TAS-S01E01-Night-of-the-Lizard-English.srt` from Englis
 python3 ai_srt_translator.py -s English -t Persian -f Spider-man-TAS-S01E01-Night-of-the-Lizard-English.srt
 ```
 
-The translated SRT file will be saved as `Spider-man-TAS-S01E01-Night-of-the-Lizard-English.srt_Persian.srt`.
+The translated subtitle file will be saved as `Spider-man-TAS-S01E01-Night-of-the-Lizard-English_Persian.srt`.
 
 
 ## Contributing

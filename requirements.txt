@@ -3,5 +3,4 @@ tqdm
 google-genai
 openai
 python-dotenv
-chardet
-srt
+pysubs2
