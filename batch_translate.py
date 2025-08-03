@@ -3,6 +3,7 @@ import logging
 from tqdm import tqdm
 from itertools import islice
 from client_utils import get_client, get_response
+from tqdm.contrib.logging import logging_redirect_tqdm
 
 # Configure logging to print timestamped info messages
 logging.basicConfig(
@@ -86,34 +87,37 @@ def batch_translate(subtitles: list, batch_size: int, source_lang: str, target_l
     GEMINI_RPM_LIMIT = 15  # Gemini's rate limit: requests per minute
     WAIT_TIME_SECONDS = 30  # wait time after hitting rate limit
 
-    # Process each batch
-    for i, batch in enumerate(tqdm(chunks(subtitles, batch_size), total=total_batches, desc="Translating")):
-        prompt = build_batch_prompt(batch, source_lang, target_lang)
-        
-        try:
-            # Send prompt to LLM model
-            response_text = get_response(client, model_name, prompt)
+    # captures logs and renders them above the progress bar,
+    # avoiding the "progress bar on every line" problem
+    with logging_redirect_tqdm():
+        # Process each batch
+        for i, batch in enumerate(tqdm(chunks(subtitles, batch_size), total=total_batches, desc="Translating")):
+            prompt = build_batch_prompt(batch, source_lang, target_lang)
             
-            # Extract the translated lines
-            translated_lines = extract_lines_from_response(response_text)
+            try:
+                # Send prompt to LLM model
+                response_text = get_response(client, model_name, prompt)
+                
+                # Extract the translated lines
+                translated_lines = extract_lines_from_response(response_text)
+                
+                # Ensure response has the same number of lines
+                if len(translated_lines) != len(batch):
+                    logging.error("Mismatch in lines. Batch index: %d", i)
+                    logging.error("Original: %s", [s.text for s in batch])
+                    logging.error("Translated: %s", translated_lines)
+                    raise ValueError("Mismatch in number of lines returned from LLM.")
+
+                # Assign translated text back to subtitle objects
+                for sub, new_text in zip(batch, translated_lines):
+                    sub.text = new_text
+
+            except Exception as e:
+                logging.exception("Error translating batch %d: %s", i, e)
             
-            # Ensure response has the same number of lines
-            if len(translated_lines) != len(batch):
-                logging.error("Mismatch in lines. Batch index: %d", i)
-                logging.error("Original: %s", [s.text for s in batch])
-                logging.error("Translated: %s", translated_lines)
-                raise ValueError("Mismatch in number of lines returned from LLM.")
-
-            # Assign translated text back to subtitle objects
-            for sub, new_text in zip(batch, translated_lines):
-                sub.text = new_text
-
-        except Exception as e:
-            logging.exception("Error translating batch %d: %s", i, e)
-        
-        # Respect LLM API's RPM limit
-        if i > 0 and i % GEMINI_RPM_LIMIT == 0:
-            logging.info(f"Waiting {WAIT_TIME_SECONDS} seconds for rate limits...")
-            time.sleep(WAIT_TIME_SECONDS)
+            # Respect LLM API's RPM limit
+            if i > 0 and i % GEMINI_RPM_LIMIT == 0:
+                logging.info(f"Waiting {WAIT_TIME_SECONDS} seconds for rate limits...")
+                time.sleep(WAIT_TIME_SECONDS)
 
     return subtitles
