@@ -20,8 +20,8 @@ This tool leverages large language models (LLMs) to translate subtitle files of 
 1.  **Clone the repository:**
 
     ```bash
-    git clone https://github.com/alimoameri/ai-srt-translator.git
-    cd ai-srt-translator
+    git clone https://github.com/alimoameri/subtitle-translator.git
+    cd subtitle-translator
     ```
 
 2.  **Install dependencies:**
@@ -48,7 +48,7 @@ This tool leverages large language models (LLMs) to translate subtitle files of 
 ## Usage
 
 ```bash
-python3 ai_srt_translator.py -s <source_language> -t <target_language> -f <input_srt_file>
+python3 sub_translator.py -s <source_language> -t <target_language> -f <input_srt_file>
 ```
 
 **Arguments:**
@@ -75,7 +75,7 @@ options:
 To translate `Spider-man-TAS-S01E01-Night-of-the-Lizard-English.srt` from English to Persian:
 
 ```bash
-python3 ai_srt_translator.py -s English -t Persian -f Spider-man-TAS-S01E01-Night-of-the-Lizard-English.srt
+python3 sub_translator.py -s English -t Persian -f Spider-man-TAS-S01E01-Night-of-the-Lizard-English.srt
 ```
 
 The translated subtitle file will be saved as `Spider-man-TAS-S01E01-Night-of-the-Lizard-English_Persian.srt`.

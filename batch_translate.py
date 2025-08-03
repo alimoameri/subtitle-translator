@@ -2,7 +2,7 @@ import time
 import logging
 from tqdm import tqdm
 from itertools import islice
-from ai_client_utils import get_client, get_response
+from client_utils import get_client, get_response
 
 # Configure logging to print timestamped info messages
 logging.basicConfig(
