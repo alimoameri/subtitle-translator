@@ -1,0 +1,9 @@
+[project]
+name = "subtitle-translator"
+version = "0.1.0"
+description = "Translate subtitles of any format using LLMs."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pip>=25.2",
+]
