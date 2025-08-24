@@ -18,22 +18,24 @@ This tool leverages large language models (LLMs) to translate subtitle files of 
 ## Installation
 
 1.  **Clone the repository:**
-
     ```bash
     git clone https://github.com/alimoameri/subtitle-translator.git
     cd subtitle-translator
     ```
 
 2.  **Install dependencies:**
-
     ```bash
     pip install -r requirements.txt
+    ```
+
+    or if you're using `uv`:
+    ```bash
+    uv pip install -r requirements.txt
     ```
 
 3.  **Set up your API key:**
 
     *   Create a `.env` file in the project directory and add your API key(s):
-
         ```
         GOOGLE_API_KEY=YOUR_GOOGLE_API_KEY
         OPENAPI_API_KEY=YOUR_GOOGLE_API_KEY
@@ -46,9 +48,13 @@ This tool leverages large language models (LLMs) to translate subtitle files of 
         ```
 
 ## Usage
-
 ```bash
 python3 sub_translator.py -s <source_language> -t <target_language> -f <input_srt_file>
+```
+
+or if you're using `uv`:
+```
+uv run sub_translator.py -f ./examples/Spider-man-TAS-S01E01-Night-of-the-Lizard-English.srt   
 ```
 
 **Arguments:**
