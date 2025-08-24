@@ -30,14 +30,14 @@ def build_batch_prompt(subs, source_lang, target_lang):
     """
     prompt = f"Translate the following {source_lang} subtitles to {target_lang}.\n"
     prompt += "Rules:\n- Translate each line individually.\n"
-    prompt += "- Do NOT merge or split lines.\n"
-    prompt += f"- Return {target_lang} lines in the same order and count.\n\n"
+    prompt += f"- Return {target_lang} lines in the same order and count.\n"
+    prompt += f"- No preamble.\n\n"
     
     prompt += f"{source_lang} subtitles:\n"
     for idx, sub in enumerate(subs, 1):
         # Remove line breaks (\N when parsing with pysub2) inside the subtitle content for better formatting
-        prompt += f"{idx}. {sub.text.replace('\\N',' ').strip()}\n"
-    
+        safe_text = sub.text.replace("\\N", " ").strip()
+        prompt += f"{idx}. {safe_text}\n"
     prompt += f"\n{target_lang} subtitles:\n"
     return prompt
 
